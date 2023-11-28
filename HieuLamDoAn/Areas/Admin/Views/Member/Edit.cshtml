@@ -1,0 +1,84 @@
+﻿@model HieuLamDoAn.Models.TeamMembers
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<main int id="main" class="main">
+    <div class="pagetitle">
+        <h2>Xác nhận sửa nhân viên</h2>
+    </div>
+    <div class="container shadow p-5">
+        <div class="row pb-2">
+            <h2>Sửa nhân viên</h2>
+        </div>
+
+        <form method="post" asp-action="Edit">
+            <div asp-validation-summary="All"></div>
+            <div class="form-group col-md-6">
+                <label asp-for="MemberID">MemberID</label>
+                <input type="text" class="form-control mb-3" asp-for="MemberID" placeholder="sửa MemberID">
+                <span asp-validation-for="MemberID" class=" alert-danger"></span>
+            </div>
+            <div class="form-row">
+                <input type="text" class="form-control mb-3" asp-for="MemberID" type="hidden">
+                <div class="form-group col-md-6">
+                    <label asp-for="MemberName">MemberName</label>
+                    <input type="text" class="form-control mb-3" asp-for="MemberName" placeholder="Nhập tên Menu">
+                    <span asp-validation-for="MemberName" class=" alert-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                @* <div class="form-group col-md-6">
+                    <label asp-for="Levels">Levels</label>
+                    <select asp-for="Levels" class="form-select" id="Levels">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group col-md-6">
+                    <div class=" alert-danger" asp-validation-summary="ModelOnly"></div>
+                    <label asp-for="ParentID">ParentID</label>
+                    <select asp-for="ParentID" class="form-control"
+                            asp-items="@(new SelectList(ViewBag.mnList,"Value","Text"))">
+                    </select>
+                </div> *@
+                <div class="form-group col-md-6">
+                    <label asp-for="Designation">Designation</label>
+                    <input type="text" class="form-control mb-3" asp-for="Designation" placeholder="Enter Designation">
+                    <span asp-validation-for="Designation" class=" alert-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label asp-for="Image">Image</label>
+                    <input type="text" class="form-control mb-3" asp-for="Image" placeholder="Enter Image">
+                    <span asp-validation-for="Image" class=" alert-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label asp-for="FbUrl">FbUrl</label>
+                    <input type="text" class="form-control mb-3" asp-for="FbUrl" placeholder="Enter FbUrl">
+                    <span asp-validation-for="FbUrl" class=" alert-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="FbUrl">TwUrl</label>
+                    <input type="text" class="form-control mb-3" asp-for="TwUrl" placeholder="Enter TwUrl">
+                    <span asp-validation-for="TwUrl" class=" alert-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="FbUrl">IgUrl</label>
+                    <input type="text" class="form-control mb-3" asp-for="IgUrl" placeholder="Enter IgUrl">
+                    <span asp-validation-for="IgUrl" class=" alert-danger"></span>
+                </div>
+                <div class="tox-form-group--maximize mt-5 mb-5">
+                    <label>
+                        @Html.CheckBox("IsActive",false)
+                        Hiển thị
+                    </label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-lg btn-primary p-2"><i class="bi bi-file-plus-fill"></i>Lưu</button>
+            <a asp-asp-controller="Menu" asp-action="Index" class="btn btn-lg btn-warning p-2"> Quay lại</a>
+        </form>
+    </div>
+</main>

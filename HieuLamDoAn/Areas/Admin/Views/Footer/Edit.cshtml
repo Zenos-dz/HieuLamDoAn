@@ -1,0 +1,85 @@
+﻿@model HieuLamDoAn.Models.Footer
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<main int id="main" class="main">
+    <div class="pagetitle">
+        <h2>Xác nhận sửa</h2>
+    </div>
+    <div class="container shadow p-5">
+        <div class="row pb-2">
+            <h2>Sửa</h2>
+        </div>
+
+        <form method="post" asp-action="Edit">
+            <input type="hidden" asp-for="FooterID">
+            <div asp-validation-summary="All"></div>
+            <div class="form-group col-md-6">
+                <label asp-for="Company">Company</label>
+                <input type="text" class="form-control mb-3" asp-for="Company" placeholder="Nhập tên Company">
+                <span asp-validation-for="Company" class=" alert-danger"></span>
+            </div>
+            <div class="form-row">
+                <input type="text" class="form-control mb-3" asp-for="Contact" type="hidden">
+                <div class="form-group col-md-6">
+                    <label asp-for="Contact">Contact</label>
+                    <input type="text" class="form-control mb-3" asp-for="Contact" placeholder="Nhập Contact">
+                    <span asp-validation-for="Contact" class=" alert-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                
+                <div class="form-group col-md-6">
+                    <label asp-for="Opening">Opening</label>
+                    <input type="text" class="form-control mb-3" asp-for="Opening" placeholder="Nhập Opening">
+                    <span asp-validation-for="Opening" class=" alert-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label asp-for="Newsletter">Newsletter</label>
+                    <input type="text" class="form-control mb-3" asp-for="Newsletter" placeholder="Nhập Newsletter">
+                    <span asp-validation-for="Newsletter" class=" alert-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label asp-for="Infomation">Infomation</label>
+                    <input type="text" class="form-control mb-3" asp-for="Infomation" placeholder="Nhập Infomation">
+                    <span asp-validation-for="Infomation" class=" alert-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="TimeOpen">TimeOpen</label>
+                    <input type="text" class="form-control mb-3" asp-for="TimeOpen" placeholder="Nhập TimeOpen">
+                    <span asp-validation-for="TimeOpen" class=" alert-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="IconContact">IconContact</label>
+                    <input type="text" class="form-control mb-3" asp-for="IconContact" placeholder="Nhập IconContact">
+                    <span asp-validation-for="IconContact" class=" alert-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="LinkCompany">LinkCompany</label>
+                    <input type="text" class="form-control mb-3" asp-for="LinkCompany" placeholder="Nhập LinkCompany">
+                    <span asp-validation-for="LinkCompany" class=" alert-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="IconSocial">IconSocial</label>
+                    <input type="text" class="form-control mb-3" asp-for="IconSocial" placeholder="Nhập IconSocial">
+                    <span asp-validation-for="IconSocial" class=" alert-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="LinkSM">LinkSM</label>
+                    <input type="text" class="form-control mb-3" asp-for="LinkSM" placeholder="Nhập LinkSM">
+                    <span asp-validation-for="LinkSM" class=" alert-danger"></span>
+                </div>
+                <div class="tox-form-group--maximize mt-5 mb-5">
+                    <label>
+                        @Html.CheckBox("IsActive", false)
+                        Hiển thị
+                    </label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-lg btn-primary p-2"><i class="bi bi-file-plus-fill"></i>Lưu</button>
+            <a asp-asp-controller="Menu" asp-action="Index" class="btn btn-lg btn-warning p-2"> Quay lại</a>
+        </form>
+    </div>
+</main>

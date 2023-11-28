@@ -1,0 +1,99 @@
+﻿@model HieuLamDoAn.Models.Footer
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<main int id="main" class="main">
+    <div class="pagetitle">
+        <h2>Xác nhận thêm mới</h2>
+    </div>
+    <div class="container shadow p-5">
+        <div class="row pb-2">
+            <h2>Thêm mới</h2>
+        </div>
+
+        <form method="post">
+            <div asp-validation-summary="All"></div>
+            <div class="form-row">
+                
+                <div class="form-group col-md-6">
+                    <label asp-for="Company">Company</label>
+                    <input type="text" class="form-control mb-3" asp-for="Company" placeholder="Nhập tên Company">
+                    <span asp-validation-for="Company" class=" alert-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    @*     <label asp-for="Levels">Levels</label>
+                    <select asp-for="Levels" class="form-select" id="Levels">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    </select>
+                    </div>
+
+
+                    <div class="form-group col-md-6">
+                    <div class=" alert-danger" asp-validation-summary="ModelOnly"></div>
+                    <label asp-for="ParentID">ParentID</label>
+                    <select asp-for="ParentID" class="form-control"
+                    asp-items="@(new SelectList(ViewBag.mnList,"Value","Text"))">
+                    </select>
+                    </div> *@
+                    <div class="form-group col-md-6">
+                        <label asp-for="Company">Contact</label>
+                        <input type="text" class="form-control mb-3" asp-for="Company" placeholder="Nhập Contact">
+                        <span asp-validation-for="Company" class=" alert-danger"></span>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label asp-for="Opening">Opening</label>
+                        <input type="text" class="form-control mb-3" asp-for="Opening" placeholder="Nhập Opening">
+                        <span asp-validation-for="Opening" class=" alert-danger"></span>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label asp-for="Newsletter">Newsletter</label>
+                        <input type="text" class="form-control mb-3" asp-for="Newsletter" placeholder="Nhập Newsletter">
+                        <span asp-validation-for="Newsletter" class=" alert-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label asp-for="Infomation">Infomation</label>
+                        <input type="text" class="form-control mb-3" asp-for="Infomation" placeholder="Nhập Infomation">
+                        <span asp-validation-for="Infomation" class=" alert-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label asp-for="TimeOpen">TimeOpen</label>
+                        <input type="text" class="form-control mb-3" asp-for="TimeOpen" placeholder="Nhập TimeOpen">
+                        <span asp-validation-for="TimeOpen" class=" alert-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label asp-for="IconContact">IconContact</label>
+                        <input type="text" class="form-control mb-3" asp-for="IconContact" placeholder="Nhập IconContact">
+                        <span asp-validation-for="IconContact" class=" alert-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label asp-for="LinkCompany">LinkCompany</label>
+                        <input type="text" class="form-control mb-3" asp-for="LinkCompany" placeholder="Nhập LinkCompany">
+                        <span asp-validation-for="LinkCompany" class=" alert-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label asp-for="IconSocial">IconSocial</label>
+                        <input type="text" class="form-control mb-3" asp-for="IconSocial" placeholder="Nhập IconSocial">
+                        <span asp-validation-for="IconSocial" class=" alert-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label asp-for="LinkSM">LinkSM</label>
+                        <input type="text" class="form-control mb-3" asp-for="LinkSM" placeholder="Nhập LinkSM">
+                        <span asp-validation-for="LinkSM" class=" alert-danger"></span>
+                    </div>
+                    <div class="tox-form-group--maximize mt-5 mb-5">
+                        <label>
+                            @Html.CheckBox("IsActive", false)
+                            Hiển thị
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-lg btn-primary p-2"><i class="bi bi-file-plus-fill"></i>Lưu</button>
+                <a asp-asp-controller="Menu" asp-action="Index" class="btn btn-lg btn-warning p-2"> Quay lại</a>
+        </form>
+    </div>
+</main>

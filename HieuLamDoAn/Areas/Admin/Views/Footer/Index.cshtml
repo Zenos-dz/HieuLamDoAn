@@ -1,0 +1,69 @@
+﻿@using HieuLamDoAn.Models;
+@model IList<Footer>
+@{
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<main id="main" class="main">
+	<div class="pagetitle">
+		<h2>Footer</h2>
+	</div>
+
+	<p>
+		<a type="button" class="btn btn-success" asp-area="Admin" asp-controller="Footer" asp-action="Create">
+			<i class="bi bi-file-earmark-text me-1"></i>Thêm thành phần
+		</a>
+	</p>
+	<section class="section dashboard">
+		<div class="row">
+			<div class="col-12">
+				<div class="card recent-sales overflow-auto">
+					<div class="card-body mt-4">
+						<table class="table table-borderless database">
+							<thead>
+								<tr>
+									<th class="col-1 text-center">FooterID</th>
+									<th class="col-1 text-center">Company</th>
+									<th class="col-1 text-center">Contact</th>
+									<th class="col-1 text-center">Opening</th>
+									<th class="col-2 text-center">Newsletter</th>
+									<th class="col-1 text-center">Infomation</th>
+									<th class="col-2 text-center">TimeOpen</th>
+									<th class="col-1 text-center">IconContact</th>
+									<th class="col-1 text-center">LinkCompany</th>
+									<th class="col-1 text-center">IconSocial</th>
+									<th class="col-1 text-center">LinkSM</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var item in Model)
+								{
+									<tr>
+										<td class="text-center">@item.FooterID</td>
+										<td class="text-center">@item.Company</td>
+										<td class="text-center">@item.Contact</td>
+										<td class="text-center">@item.Opening</td>
+										<td class="text-center">@item.Newsletter</td>
+										<td class="text-center">@item.Infomation</td>
+										<td class="text-center">@item.TimeOpen</td>
+										<td class="text-center">@item.IconContact</td>
+										<td class="text-center">@item.LinkCompany</td>
+										<td class="text-center">@item.IconSocial</td>
+										<td class="text-center">@item.LinkSM</td>
+										<td class="col-2 text-center">
+											<a asp-area="Admin" asp-controller="Footer" asp-action="Edit"
+											   asp-route-id="@item.FooterID" class="btn btn-primary btn-sm"
+											   title="Sửa nội dung bài viết"><i class="bi bi-pencil"></i></a>
+											<a asp-area="Admin" asp-controller="Footer" asp-action="Delete"
+											   asp-route-id="@item.FooterID" class="btn btn-danger btn-sm"
+											   title="Xóa thông tin bài viết"><i class="bi bi-trash"></i></a>
+										</td>
+									</tr>
+								}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
