@@ -1,0 +1,93 @@
+﻿@model HieuLamDoAn.Models.Customer
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h2>Xác nhận thêm mới</h2>
+    </div>
+    <div class="container shadow p-5">
+        <div class="row pb-2">
+            <h2>Thêm mới</h2>
+        </div>
+
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="All"></div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Name">Tên</label>
+                    <input type="text" class="form-control mb-3" asp-for="Name" placeholder="Nhập tên Member">
+                    <span asp-validation-for="Name" class="alert-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                        <label asp-for="Comment">Bình luận</label>
+                        <input type="text" class="form-control mb-3" asp-for="Comment" placeholder="Nhập bình luận">
+                        <span asp-validation-for="Comment" class="alert-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6">
+                        <label asp-for="Position">Chức vụ</label>
+                        <input type="text" class="form-control mb-3" asp-for="Position" placeholder="Nhập chức vụ">
+                        <span asp-validation-for="Position" class="alert-danger"></span>
+                </div>
+
+                <div class="form-group col-md-6">
+                        <label asp-for="Avatar">Ảnh đại diện</label>
+                        <input type="file" class="form-control mb-3" asp-for="Avatar">
+                        <span asp-validation-for="Avatar" class="alert-danger"></span>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-lg btn-primary p-2"><i class="bi bi-file-plus-fill"></i>Lưu</button>
+            <a asp-controller="Menu" asp-action="Index" class="btn btn-lg btn-warning p-2">Quay lại</a>
+        </form>
+    </div>
+</main>
+@* <main int id="main" class="main">
+    <div class="pagetitle">
+        <h2>Xác nhận thêm mới</h2>
+    </div>
+    <div class="container shadow p-5">
+        <div class="row pb-2">
+            <h2>Thêm mới</h2>
+        </div>
+
+        <form method="post">
+            <div asp-validation-summary="All"></div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Name">Name</label>
+                    <input type="text" class="form-control mb-3" asp-for="Name" placeholder="Nhập tên Member">
+                    <span asp-validation-for="Name" class=" alert-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <div class="form-group col-md-6">
+                        <label asp-for="Comment">Comment</label>
+                        <input type="text" class="form-control mb-3" asp-for="Comment" placeholder="Nhập bình luận">
+                        <span asp-validation-for="Comment" class=" alert-danger"></span>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label asp-for="Position">Position</label>
+                        <input type="text" class="form-control mb-3" asp-for="Position" placeholder="Nhập chức vụ">
+                        <span asp-validation-for="Position" class=" alert-danger"></span>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label asp-for="Avatar">Avatar</label>
+                        <input type="text" class="form-control mb-3" asp-for="Avatar" placeholder="Nhập liên kết ảnh đại diện">
+                        <span asp-validation-for="Avatar" class=" alert-danger"></span>
+                    </div>
+                    <div class="tox-form-group--maximize mt-5 mb-5">
+                        <label>
+                            @Html.CheckBox("IsActive", false)
+                            Hiển thị
+                        </label>
+                    </div>
+                </div>
+            </div>
+                <button type="submit" class="btn btn-lg btn-primary p-2"><i class="bi bi-file-plus-fill"></i>Lưu</button>
+                <a asp-asp-controller="Menu" asp-action="Index" class="btn btn-lg btn-warning p-2"> Quay lại</a>
+        </form>
+    </div>
+</main> *@

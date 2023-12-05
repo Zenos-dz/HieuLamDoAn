@@ -1,0 +1,49 @@
+﻿@model HieuLamDoAn.Models.Customer
+@{
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h2>Xác nhận thêm mới</h2>
+    </div>
+    <div class="container shadow p-5">
+        <div class="row pb-2">
+            <h2>Thêm mới</h2>
+        </div>
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    
+
+                    <div class="mb-3">
+                        <label asp-for="Name" class="form-label">Tên</label>
+                        <input type="text" class="form-control" asp-for="Name" placeholder="Nhập tên khách hàng">
+                        <span asp-validation-for="Name" class="alert-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Comment" class="form-label">Bình luận</label>
+                        <input type="text" class="form-control" asp-for="Comment" placeholder="Nhập bình luận">
+                        <span asp-validation-for="Comment" class="alert-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Position" class="form-label">Chức vụ</label>
+                        <input type="text" class="form-control" asp-for="Position" placeholder="Nhập chức vụ">
+                        <span asp-validation-for="Position" class="alert-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Avatar" class="form-label">Ảnh đại diện</label>
+                        <input type="file" class="form-control" asp-for="Avatar">
+                        <span asp-validation-for="Avatar" class="alert-danger"></span>
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg me-md-2"><i class="bi bi-file-plus-fill"></i> Lưu</button>
+                        <a asp-controller="Menu" asp-action="Index" class="btn btn-warning btn-lg">Quay lại</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>

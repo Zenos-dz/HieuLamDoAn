@@ -1,0 +1,181 @@
+﻿@using HieuLamDoAn.Models;
+@model IList<Customer>
+@{
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<main id="main" class="main">
+	<div class="page-title">
+		<h2>Quản lý Bình luận</h2>
+	</div>
+
+	<div class="action-btn">
+		<a type="button" class="btn btn-success" asp-area="Admin" asp-controller="Customer" asp-action="Create">
+			<i class="bi bi-file-earmark-text me-1"></i>Thêm Bình luận
+		</a>
+	</div>
+
+	<section class="section dashboard">
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+					<div class="card-body">
+						<table class="table table-striped">
+							<thead class="thead-dark">
+								<tr>
+									<th scope="col">ID</th>
+									<th scope="col">Tên</th>
+									<th scope="col">Bình luận</th>
+									<th scope="col">Chức vụ</th>
+									<th scope="col">Ảnh đại diện</th>
+									<th scope="col">Thao tác</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var item in Model)
+								{
+									<tr>
+										<td>@item.CustomerID</td>
+										<td>
+											<a asp-area="Admin" asp-controller="TeamMembers" asp-action="Details"
+											   asp-route-id="@item.CustomerID" class="text-primary">@item.Name</a>
+										</td>
+										<td>@item.Comment</td>
+										<td>@item.Position</td>
+										<td>
+											<img src="@item.Avatar" alt="Avatar" class="rounded-circle avatar-img"
+												 style="max-width: 50px; max-height: 50px;">
+										</td>
+										<td>
+											<div class="btn-group" role="group">
+												<a asp-area="Admin" asp-controller="Customer" asp-action="Edit"
+												   asp-route-id="@item.CustomerID" class="btn btn-primary btn-sm"
+												   title="Sửa nội dung"><i class="bi bi-pencil"></i></a>
+												<a asp-area="Admin" asp-controller="Customer" asp-action="Delete"
+												   asp-route-id="@item.CustomerID" class="btn btn-danger btn-sm"
+												   title="Xóa thông tin"><i class="bi bi-trash"></i></a>
+											</div>
+										</td>
+									</tr>
+								}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+@* <main id="main" class="main">
+	<div class="pagetitle">
+		<h2>Comment</h2>
+	</div>
+
+	<div class="action-btn">
+		<a type="button" class="btn btn-success" asp-area="Admin" asp-controller="Customer" asp-action="Create">
+			<i class="bi bi-file-earmark-text me-1"></i>Thêm Comment
+		</a>
+	</div>
+
+	<section class="section dashboard">
+		<div class="row">
+			<div class="col-12">
+				<div class="card recent-sales overflow-auto">
+					<div class="card-body mt-4">
+						<table class="table table-borderless database">
+							<thead>
+								<tr>
+									<th class="col-2 text-center">CustomerID</th>
+									<th class="col-2 text-center">Tên</th>
+									<th class="col-2 text-center">Bình luận</th>
+									<th class="col-2 text-center">Chức vụ</th>
+									<th class="col-1 text-center">Ảnh đại diện</th>
+									<th class="col-2 text-center">Thao tác</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var item in Model)
+								{
+									<tr>
+										<td class="text-center" scope="row">@item.CustomerID</td>
+										<td>
+											<a asp-area="Admin" asp-controller="TeamMembers" asp-action="Details"
+											   asp-route-id="@item.CustomerID" class="text-primary">@item.Name</a>
+										</td>
+										<td class="text-center">@item.Comment</td>
+										<td class="text-center">@item.Position</td>
+										<td class="text-center">@item.Avatar</td>
+										<td class="text-center">
+											<a asp-area="Admin" asp-controller="Customer" asp-action="Edit"
+											   asp-route-id="@item.CustomerID" class="btn btn-primary btn-sm"
+											   title="Sửa nội dung"><i class="bi bi-pencil"></i></a>
+											<a asp-area="Admin" asp-controller="Customer" asp-action="Delete"
+											   asp-route-id="@item.CustomerID" class="btn btn-danger btn-sm"
+											   title="Xóa thông tin"><i class="bi bi-trash"></i></a>
+										</td>
+									</tr>
+								}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</main> *@
+@* <main id="main" class="main">
+	<div class="pagetitle">
+		<h2>Comment</h2>
+	</div>
+
+	<p>
+		<a type="button" class="btn btn-success" asp-area="Admin" asp-controller="Customer" asp-action="Create">
+			<i class="bi bi-file-earmark-text me-1"></i>Thêm Comment
+		</a>
+	</p>
+	<section class="section dashboard">
+		<div class="row">
+			<div class="col-12">
+				<div class="card recent-sales overflow-auto">
+					<div class="card-body mt-4">
+						<table class="table table-borderless database">
+							<thead>
+								<tr>
+									<th class="col-2 text-center">CustomerID</th>
+									<th class="col-2 text-centre">Tên</th>
+									<th class="col-2 text-center">Bình luận</th>
+									<th class="col-2 text-center">Chức vụ</th>
+									<th class="col-1 text-center">Ảnh đại diện</th>
+									
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var item in Model)
+								{
+									<tr>
+										<th class="text-center" scope="row">@item.CustomerID</th>
+										<td>
+											<a asp-area="Admin" asp-controller="TeamMembers" asp-action="Details"
+											   asp-route-id=" @item.CustomerID" class="text-primary">@item.Name</a>
+										</td>
+										<td class="text-center">@item.Comment</td>
+										<td class="text-center">@item.Position</td>
+										<td class="text-center">@item.Avatar</td>
+										<td class="text-center">
+											<a asp-area="Admin" asp-controller="Customer" asp-action="Edit"
+											   asp-route-id="@item.CustomerID" class="btn btn-primary btn-sm"
+											   title="Sửa nội dung"><i class="bi bi-pencil"></i></a>
+											<a asp-area="Admin" asp-controller="Customer" asp-action="Delete"
+											   asp-route-id="@item.CustomerID" class="btn btn-danger btn-sm"
+											   title="Xóa thông tin"><i class="bi bi-trash"></i></a>
+										</td>
+									</tr>
+								}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+ *@
