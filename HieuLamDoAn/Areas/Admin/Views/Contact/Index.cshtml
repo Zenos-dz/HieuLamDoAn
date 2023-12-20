@@ -1,0 +1,48 @@
+﻿@using HieuLamDoAn.Models;
+@model IList<Contact>
+@{
+	Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<main id="main" class="main">
+	<section class="section dashboard">
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+					<div class="card-body">
+						<table class="table table-striped">
+							<thead class="thead-dark">
+								<tr>
+									<th scope="col">ID</th>
+									<th scope="col">Tên</th>
+									<th scope="col">Email</th>
+									<th scope="col">Chức vụ</th>
+									<th scope="col">Phản hồi</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var item in Model)
+								{
+									<tr>
+										<td>@item.ContactID</td>
+										<td>
+											<a asp-area="Admin" asp-controller="Contact" class="text-primary">@item.Name</a>
+										</td>
+										<td>@item.Email</td>
+										<td>@item.Subject</td>
+										<td>@item.Message</td>
+										<td>
+											<div class="btn-group" role="group">
+												<a href="/admin/contact/delete/@item.ContactID" class="btn btn-danger btn-sm"
+												   title="Xóa thông tin"><i class="bi bi-trash"></i></a>
+											</div>
+										</td>
+									</tr>
+								}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>

@@ -4,17 +4,18 @@
 }
 <main id="main" class="main">
     <div class="pagetitle">
-        <h2>Xác nhận thêm mới</h2>
+        <h2>Xác nhận sửa</h2>
     </div>
     <div class="container shadow p-5">
         <div class="row pb-2">
-            <h2>Thêm mới</h2>
+            <h2>sửa</h2>
         </div>
             <div class="card-body">
                 <form method="post" enctype="multipart/form-data">
-                    
+                <input type="hidden" asp-for="CustomerID">
 
-                    <div class="mb-3">
+
+                <div class="mb-3">
                         <label asp-for="Name" class="form-label">Tên</label>
                         <input type="text" class="form-control" asp-for="Name" placeholder="Nhập tên khách hàng">
                         <span asp-validation-for="Name" class="alert-danger"></span>
@@ -34,7 +35,7 @@
 
                     <div class="mb-3">
                         <label asp-for="Avatar" class="form-label">Ảnh đại diện</label>
-                        <input type="file" class="form-control" asp-for="Avatar">
+                        <input type="text" class="form-control" asp-for="Avatar">
                         <span asp-validation-for="Avatar" class="alert-danger"></span>
                     </div>
 

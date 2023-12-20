@@ -12,7 +12,7 @@ namespace HieuLamDoAn.Models
 
         public string? Name { get; set; }
 
-       // public List<FoodMenu>? FoodMenus { get; set; }
+       public List<FoodMenu>? FoodMenus { get; set; }
 
     }
 

@@ -14,11 +14,11 @@
         <form method="post">
             <div asp-validation-summary="All"></div>
             <div class="form-row">
-                <div class="form-group col-md-6">
+               @*  <div class="form-group col-md-6">
                     <label asp-for="MemberID">MemberID</label>
                     <input type="text" class="form-control mb-3" asp-for="MemberID" placeholder="Nhập MemberID">
                     <span asp-validation-for="MemberID" class=" alert-danger"></span>
-                </div>
+                </div> *@
                 <div class="form-group col-md-6">
                     <label asp-for="MemberName">MemberName</label>
                     <input type="text" class="form-control mb-3" asp-for="MemberName" placeholder="Nhập tên Member">
@@ -27,21 +27,7 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                @*     <label asp-for="Levels">Levels</label>
-                    <select asp-for="Levels" class="form-select" id="Levels">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                    </select>
-                </div>
-
-
-                <div class="form-group col-md-6">
-                    <div class=" alert-danger" asp-validation-summary="ModelOnly"></div>
-                    <label asp-for="ParentID">ParentID</label>
-                    <select asp-for="ParentID" class="form-control"
-                            asp-items="@(new SelectList(ViewBag.mnList,"Value","Text"))">
-                    </select>
-                </div> *@
+                
                 <div class="form-group col-md-6">
                         <label asp-for="Designation">Designation</label>
                         <input type="text" class="form-control mb-3" asp-for="Designation" placeholder="Nhập chức vụ">
@@ -70,10 +56,7 @@
                         <span asp-validation-for="IgUrl" class=" alert-danger"></span>
                 </div>
                 <div class="tox-form-group--maximize mt-5 mb-5">
-                    <label>
-                        @Html.CheckBox("IsActive",false)
-                        Hiển thị
-                    </label>
+                    
                 </div>
             </div>
             <button type="submit" class="btn btn-lg btn-primary p-2"><i class="bi bi-file-plus-fill"></i>Lưu</button>
